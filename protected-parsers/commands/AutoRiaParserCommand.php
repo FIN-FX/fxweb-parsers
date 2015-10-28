@@ -139,17 +139,17 @@ class AutoRiaParserCommand extends CConsoleCommand
     public function actionMinfinbuy()
     {
         $allres = [];
-        $datacache = '/home/h47730/data/www/fxweb.net.ua/parsers/datacachebuy.txt';
-        $url = 'http://ygc21fu1.qjtv.pdl.e.s48.ru.wbprx.com/currency/auction/usd/buy/dnepropetrovsk/';
+        $datacache = '/home/fxweb-parsers/parsers/datacachebuy.txt';
+        $url = 'http://minfin.com.ua/currency/auction/usd/buy/dnepropetrovsk/';
         $cookie = 'cookiebuy.txt';
         $result = $this->getData($url, $cookie);
         $allres['dnepropetrovsk'] = $result;
 
-        $url = 'http://ygc21fu1.qjtv.pdl.e.s48.ru.wbprx.com/currency/auction/usd/buy/kiev/';
+        $url = 'http://minfin.com.ua/currency/auction/usd/buy/kiev/';
         $result = $this->getData($url, $cookie);
         $allres['kiev'] = $result;
 
-        $url = 'http://ygc21fu1.qjtv.pdl.e.s48.ru.wbprx.com/currency/auction/usd/buy/vinnitsa/';
+        $url = 'http://minfin.com.ua/currency/auction/usd/buy/vinnitsa/';
         $result = $this->getData($url, $cookie);
         $allres['vinnitsa'] = $result;
 
@@ -246,16 +246,16 @@ class AutoRiaParserCommand extends CConsoleCommand
     {
         $allres = [];
         $cookie = 'cookiesell.txt';
-        $datacache = '/home/h47730/data/www/fxweb.net.ua/parsers/datacachesell.txt';
-        $url = 'http://ygc21fu1.qjtv.pdl.e.s48.ru.wbprx.com/currency/auction/usd/sell/dnepropetrovsk/';
+        $datacache = '/home/fxweb-parsers/parsers/datacachesell.txt';
+        $url = 'http://minfin.com.ua/currency/auction/usd/sell/dnepropetrovsk/';
         $result = $this->getData($url, $cookie);
         $allres['dnepropetrovsk'] = $result;
 
-        $url = 'http://ygc21fu1.qjtv.pdl.e.s48.ru.wbprx.com/currency/auction/usd/sell/kiev/';
+        $url = 'http://minfin.com.ua/currency/auction/usd/sell/kiev/';
         $result = $this->getData($url, $cookie);
         $allres['kiev'] = $result;
 
-        $url = 'http://ygc21fu1.qjtv.pdl.e.s48.ru.wbprx.com/currency/auction/usd/sell/vinnitsa/';
+        $url = 'http://minfin.com.ua/currency/auction/usd/sell/vinnitsa/';
         $result = $this->getData($url, $cookie);
         $allres['vinnitsa'] = $result;
 
@@ -350,7 +350,7 @@ class AutoRiaParserCommand extends CConsoleCommand
 
     public function actionBanks()
     {
-        $datacache = '/home/h47730/data/www/fxweb.net.ua/parsers/banks.txt';
+        $datacache = '/home/fxweb-parsers/parsers/banks.txt';
         $document = new DomDocument();
         $url = 'http://minfin.com.ua/currency/banks/usd/';
         $ch = curl_init($url);

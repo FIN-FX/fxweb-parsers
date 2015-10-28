@@ -60,8 +60,8 @@ return array(
         'db'=>array(
             'connectionString' => 'mysql:host=localhost;dbname=parsers',
             'emulatePrepare' => true,
-            'username' => 'parsers',
-            'password' => 'parsers',
+            'username' => 'root',
+            'password' => 'root',
             'charset' => 'utf8',
         ),
         'errorHandler'=>array(
