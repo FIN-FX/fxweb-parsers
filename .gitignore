@@ -1,6 +1,6 @@
-assets/*
-!assets/.gitignore
-protected/runtime/*
-!protected/runtime/.gitignore
-protected/data/*.db
-themes/classic/views/
+parsers/assets/*
+!parsers/assets/.gitignore
+protected-parsers/runtime/*
+!protected-parsers/runtime/.gitignore
+protected-parsers/data/*.db
+parsers/themes/classic/views/
