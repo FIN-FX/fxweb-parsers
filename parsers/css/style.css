@@ -1,0 +1,13 @@
+#page {
+    padding-top: 60px;
+}
+
+#sidebar {
+    position: absolute;
+    top: 68px;
+    right: 355px;
+}
+
+table td {
+    word-break: break-all;
+}
