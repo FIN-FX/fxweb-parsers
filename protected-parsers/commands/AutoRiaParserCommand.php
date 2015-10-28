@@ -14,7 +14,7 @@ class AutoRiaParserCommand extends CConsoleCommand
         $idSite = $site->id;
 
         // Generate filters
-        $searchBegin = "/blocks_search_ajax/search/?countpage=100&";
+        $searchBegin = "/blocks_search_ajax/search/";
         $viewBegin = "/search/?target=search&";
         
         $models = AutoRia::model()->findAllByAttributes(array('active' => 1));
@@ -22,7 +22,7 @@ class AutoRiaParserCommand extends CConsoleCommand
         foreach($models as $model)
         {
             $searchUri = $model->uri;
-            $url = $site->url.$searchBegin . '&' . $searchUri;
+            $url = $site->url.$searchBegin . '?' . $searchUri;
             $ch = curl_init($url);
 
             curl_setopt($ch, CURLOPT_HEADER,         0);
@@ -34,10 +34,11 @@ class AutoRiaParserCommand extends CConsoleCommand
             curl_close($ch);
             if ($status != 200)
                 continue;
-
+	    
             $result = CJSON::decode($response);
+	    
             $result = $result['result']['search_result']['ids'];
-
+	    
             $newItemsLinks = [];
             $existItems = Items::model()->findAllByAttributes(['id_site' => $idSite, 'id_search' => $model->id]);
             $existItems = array_values(CHtml::listData($existItems, 'id', 'id_item'));
