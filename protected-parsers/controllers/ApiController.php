@@ -115,6 +115,8 @@ class ApiController extends Controller
         {
             $data .= $dd;
         }
+        $data = CJSON::decode($data);
+        $data = CJSON::encode(['result' => $data]);
         echo $data;
     }
 
